@@ -35,12 +35,15 @@
         <i class="fa fa-regular fa-star" aria-hidden="true"></i>
         <i class="fa fa-regular fa-star" aria-hidden="true"></i>
       </div>
+      <span class="rating">0 of 5</span>
     </div>
     <script>
       const allStar = document.querySelectorAll(".fa");
+      const rating = document.querySelector(".rating");
       allStar.forEach((fa, i) => {
         fa.onclick = function () {
           let currentStar = i + 1;
+          rating.textContent = `${currentStar} of 5`;
           allStar.forEach((fa, j) => {
             if (currentStar >= j + 1) {
               fa.classList.remove("fa-regular");
@@ -49,8 +52,9 @@
               fa.classList.remove("fa-solid");
               fa.classList.add("fa-regular");
             }
-        });
-      }});
+          });
+        };
+      });
     </script>
     <script
       src="https://kit.fontawesome.com/fd0f757bae.js"
